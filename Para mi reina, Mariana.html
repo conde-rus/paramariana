@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para mi reina, Mariana 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff4fa3; --hot:#e6177f; --violet:#7b2ff7; --deep:#2a0a4a; --cream:#fff6fb;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;font-family:'Lora',Georgia,serif;color:#fff;overflow-x:hidden;
+  background:linear-gradient(135deg,#ff4fa3,#c026d3,#7b2ff7,#ff4fa3);background-size:300% 300%;
+  animation:bg 14s ease infinite;transition:background .8s}
+body.carta{background:linear-gradient(160deg,#2a0a4a,#6d28d9,#be185d,#2a0a4a);background-size:300% 300%}
+@keyframes bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+#rain{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.f{position:absolute;top:-60px;animation:fall linear forwards;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
+@keyframes fall{to{transform:translate(var(--dx),115vh) rotate(var(--rot))}}
+.screen{position:relative;z-index:2;min-height:100vh;padding:28px 16px 60px;display:none;flex-direction:column;align-items:center}
+.screen.on{display:flex}
+h1{font-family:'Great Vibes','Brush Script MT',cursive;font-weight:400;font-size:clamp(46px,11vw,92px);text-align:center;line-height:1.05;text-shadow:0 4px 18px rgba(80,0,90,.5)}
+.sub{text-align:center;font-style:italic;opacity:.95;margin:8px 0 26px;font-size:clamp(15px,3.6vw,19px)}
+.collage{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:18px;width:100%;max-width:860px;padding:10px}
+.ph{background:#fff;padding:8px 8px 30px;border-radius:6px;box-shadow:0 10px 26px rgba(40,0,70,.45);cursor:pointer;transition:transform .25s;border:0;font:inherit;color:inherit}
+.ph:nth-child(odd){transform:rotate(-3deg)}.ph:nth-child(even){transform:rotate(3deg)}
+.ph:nth-child(3n){transform:rotate(-1deg) translateY(8px)}
+.ph:hover,.ph:focus-visible{transform:rotate(0) scale(1.07);z-index:3;outline:3px solid #ffd1ec}
+.img{aspect-ratio:1/1;width:100%;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:44px;
+  background:linear-gradient(135deg,#ffc2e2,#d8b4fe);background-size:cover;background-position:center;color:#fff}
+.caption{display:block;margin-top:9px;text-align:center;font-family:'Great Vibes',cursive;font-size:clamp(21px,5vw,28px);
+  line-height:1.05;color:#9d174d;text-shadow:0 1px 0 #ffd6e9}
+.btn{margin-top:34px;font-family:'Great Vibes',cursive;font-size:clamp(30px,7vw,42px);padding:12px 38px;border:0;border-radius:60px;cursor:pointer;
+  color:#fff;background:linear-gradient(90deg,#e6177f,#7b2ff7);box-shadow:0 0 0 4px rgba(255,255,255,.35),0 12px 30px rgba(40,0,70,.5);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.07);box-shadow:0 0 0 10px rgba(255,255,255,.18),0 12px 30px rgba(40,0,70,.5)}}
+.btn.small{font-size:26px;padding:8px 26px;animation:none;margin-top:30px}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(30,0,50,.82);backdrop-filter:blur(6px)}
+#lb.on{display:flex}
+.card{background:#fff;color:#4a1a5e;border-radius:14px;padding:14px 14px 22px;max-width:480px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6);animation:pop .35s}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.card .img{aspect-ratio:4/3;font-size:70px}
+#lbi{display:block;width:100%;max-height:62vh;object-fit:contain;border-radius:8px;background:#fdeaf5}
+.card{max-height:94vh;overflow-y:auto}
+#lbt{margin:14px 0 4px;font-size:clamp(17px,4vw,21px);line-height:1.5;color:#6d1b57}
+.x{display:block;margin:18px auto 0;padding:11px 30px;border:2px solid rgba(255,255,255,.8);border-radius:999px;
+  color:#fff;background:linear-gradient(120deg,#ff4fa3,#be185d 55%,#7b2ff7);font:600 18px 'Lora',Georgia,serif;
+  letter-spacing:.04em;box-shadow:0 5px 0 #54114e,0 10px 22px rgba(123,47,247,.35);cursor:pointer;
+  transition:transform .2s,box-shadow .2s,filter .2s}
+.x::before{content:"✦";margin-right:9px;color:#ffe6a8}
+.x:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 8px 0 #54114e,0 14px 26px rgba(123,47,247,.45)}
+.x:active{transform:translateY(2px);box-shadow:0 3px 0 #54114e,0 6px 14px rgba(123,47,247,.35)}
+.x:focus-visible{outline:3px solid #ffd166;outline-offset:4px}
+/* letter */
+.paper{max-width:640px;width:100%;margin-top:14px;padding:34px 28px 38px;border-radius:10px;color:#4a1a3a;
+  background:repeating-linear-gradient(#fff9fc,#fff9fc 33px,#f3d3e6 34px);box-shadow:0 20px 60px rgba(0,0,0,.55);border:2px solid #f5b5d8;position:relative}
+.paper::before{content:"💌";position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:44px}
+.paper h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(36px,8vw,52px);color:#be185d;margin-bottom:10px;line-height:1.1}
+.paper p{font-size:clamp(16px,3.9vw,18.5px);line-height:34px;margin-bottom:34px;opacity:0;transform:translateY(12px);transition:all 1s}
+.paper p.show{opacity:1;transform:none}
+.paper .firma{font-family:'Great Vibes',cursive;font-size:36px;color:#7b2ff7;line-height:1.2;text-align:right}
+@media (prefers-reduced-motion:reduce){.btn,body{animation:none}}
+</style>
+</head>
+<body>
+<div id="rain"></div>
+
+<!-- PANTALLA 1 -->
+<section class="screen on" id="s1">
+  <h1>Mariana, mi reina</h1>
+  <p class="sub">Toque cada foto, que cada una guarda algo para usted 🤎</p>
+  <div class="collage" id="collage"></div>
+  <button class="btn" id="go">Dele clic aquí 🤎</button>
+</section>
+
+<!-- PANTALLA 2 -->
+<section class="screen" id="s2">
+  <div class="paper">
+    <h2>Para mi reina, Mariana:</h2>
+    <p>Mire pues, mi amor, me puse a escribirle esto porque hay cosas que uno no se puede guardar y usted se merece escuchar lo mucho que vale para mí. Quería decirle, con el alma en la mano, lo enormemente agradecido que estoy con la vida por haberme cruzado con usted. ¡Gracias por todo, mi cielo! Por su paciencia, por sus risas, por la compañía tan bonita que me da todos los días y por ser ese apoyo incondicional. Usted es, sin duda alguna, la mejor mujer que he encontrado en este mundo; no hay nadie que se le alinee ni de cerquita.</p>
+    <p>Quiero que le quede grabado en esa cabecita: para mis ojos, usted siempre va a ser perfecta. Así tal cual como es, es que me enamora cada día más. Nunca cambie esa forma de ser tan linda, porque no tiene que cambiarle absolutamente nada a su esencia. Cada detalle suyo, desde la forma en que me mira hasta cómo hace que un día normal se vuelva una chimba de momento, me confirma que estoy al lado de la mujer correcta.</p>
+    <p>Mis ojos bonitos, no se imagina la falta que me hace cuando no está y lo feliz que me pone saber que nos tenemos el uno al otro. Te amo con todo mi corazón, vida mía. Y no es solo un decir, es que de verdad quiero que la carta del futuro la escribamos juntos: contigo quiero estar para toda mi vida, construyendo sueños, superando cualquier chicharrón que se nos cruce y disfrutando cada paso.</p>
+    <p>Sos mi reina, mi parcera de vida y la dueña de mi corazón.<br>Te amo infinitamente, mi amor.</p>
+    <p class="firma">Siempre tuyo. 🤎</p>
+  </div>
+  <button class="btn small" id="back">← Volver a nuestras fotos</button>
+</section>
+
+<div id="lb"><div class="card"><img id="lbi" alt="" style="display:none"><div class="img" id="lbe"></div><p id="lbt"></p><button class="x" id="lbx">Cerrar</button></div></div>
+
+<script>
+// ✏️ AQUÍ VAN SUS FOTOS: pegue la dirección de cada foto en "src". Si queda vacío, sale un corazón.
+const FOTOS=[
+ {src:"amor.png",titulo:"Mi lugar feliz",msg:"Contigo hasta los días normales se vuelven un regalo."},
+ {src:"cielo.png",titulo:"Su sonrisa",msg:"Su sonrisa es mi lugar favorito en el mundo."},
+ {src:"cocoro.png",titulo:"Nuestro tesoro",msg:"Cada recuerdo a su lado vale oro, mi amor."},
+ {src:"corazon.png",titulo:"Puro amor",msg:"Gracias por tanta paciencia y tanto cariño."},
+ {src:"mi niña.png",titulo:"Mi niña linda",msg:"Usted es mi hogar, mi reina, mi vida entera."},
+ {src:"vida.png",titulo:"Por siempre",msg:"Te amo infinitamente, y cada día un poquito más."}
+];
+const EMO=["💖","💜","🌸","💕","🌷","💞"];
+const $=id=>document.getElementById(id);
+function paint(el,i){const f=FOTOS[i];if(f.src){el.style.backgroundImage=`url("${f.src}")`;el.textContent="";}else el.textContent=EMO[i%EMO.length];}
+FOTOS.forEach((f,i)=>{const b=document.createElement('button');b.className='ph';b.setAttribute('aria-label','Abrir foto: '+f.titulo);
+  const d=document.createElement('div');d.className='img';paint(d,i);b.appendChild(d);
+  const caption=document.createElement('span');caption.className='caption';caption.textContent=f.titulo;b.appendChild(caption);
+b.onclick=()=>{const im=$('lbi'),em=$('lbe');if(f.src){im.src=f.src;im.style.display='block';em.style.display='none'}else{im.style.display='none';em.style.display='flex';paint(em,i)}$('lbt').textContent=f.msg;$('lb').classList.add('on')}
+  $('collage').appendChild(b)});
+$('lbx').onclick=()=>$('lb').classList.remove('on');
+
+let set=["🌸","🌷","🌺","💮","🌼","💜"];
+function drop(){const e=document.createElement('span');e.className='f';e.textContent=set[Math.random()*set.length|0];
+  const dur=6+Math.random()*7;e.style.cssText=`left:${Math.random()*100}vw;font-size:${16+Math.random()*26}px;animation-duration:${dur}s;--dx:${(Math.random()-.5)*160}px;--rot:${(Math.random()-.5)*720}deg`;
+  $('rain').appendChild(e);setTimeout(()=>e.remove(),dur*1000)}
+setInterval(drop,320);
+
+function show(n){$('s1').classList.toggle('on',n==1);$('s2').classList.toggle('on',n==2);document.body.classList.toggle('carta',n==2);
+  set=n==2?["🌹","💜","🥀","🌹","💗","✨"]:["🌸","🌷","🌺","💮","🌼","💜"];window.scrollTo(0,0)}
+$('go').onclick=()=>{show(2);document.querySelectorAll('.paper p').forEach((p,i)=>{p.classList.remove('show');setTimeout(()=>p.classList.add('show'),500+i*1400)})};
+$('back').onclick=()=>show(1);
+</script>
+</body>
+</html>
